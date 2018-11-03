@@ -1,17 +1,29 @@
 <template>
     <Page>
         <ActionBar :title="app.name + ' ' + app.version" />
-        <StackLayout>
 
-            <Label textWrap="true" class="h1" style="color: white; font-weight: 700;">{{app.name}}</Label>
-            <Label textWrap="true" class="h4" style="color: white; font-weight: 700;">This app gathers the latest pictures taken by NASA's Curiosity Rover</Label>
-            <Label textWrap="true">The images may load slowly (this depends on your internet connection). I am not responsible for your data usage or anything that happens to your phone</Label>
+        <TabView tabBackgroundColor="#d83131" androidTabsPosition="top" selectedTabTextColor="#ffffff">
+            <TabViewItem title="Home">
+                <home-vue />
+            </TabViewItem>
 
-            <Button @tap="navigateToPictures">See Pictures</Button>
-            <Button @tap="navigateToAboutCuriosity">More About Curiosity</Button>
+            <TabViewItem title="Pictures From Curiosity">
 
-            
-        </StackLayout>
+                <pictures-vue />
+                
+            </TabViewItem>
+
+            <TabViewItem title="About Curiosity">
+
+                <about-curiosity-vue />
+                
+            </TabViewItem>
+
+
+        </TabView>
+
+
+
     </Page>
 </template>
 
@@ -19,8 +31,16 @@
     var appconfig = require("../package.json")
     import PicturesVue from './Pictures.vue';
     import AboutCuriosityVue from './AboutCuriosity.vue';
-
+    import HomeVue from './Home.vue'
+    
     export default {
+
+        components: {
+            PicturesVue,
+            AboutCuriosityVue,
+            HomeVue,
+        },
+
         data() {
             return {
 
@@ -32,11 +52,11 @@
         },
 
         methods: {
-            navigateToPictures(){
+            navigateToPictures() {
                 this.$navigateTo(PicturesVue)
             },
 
-            navigateToAboutCuriosity(){
+            navigateToAboutCuriosity() {
                 this.$navigateTo(AboutCuriosityVue)
             }
         },
@@ -58,15 +78,15 @@
         color: #ffffff;
     }
 
-    StackLayout{
+    StackLayout {
         margin: 15;
     }
-    
-    Label{
+
+    Label {
         color: white;
     }
-    
-    Page{
+
+    Page {
         background-color: #161616;
         color: white;
     }

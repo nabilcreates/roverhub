@@ -1,6 +1,4 @@
 <template>
-    <Page>
-        <ActionBar :title="'About Curiosity'" />
         <ScrollView>
 
             <StackLayout>
@@ -16,7 +14,6 @@
             </StackLayout>
 
         </ScrollView>
-    </Page>
 </template>
 
 <script>

@@ -1,6 +1,4 @@
 <template>
-    <Page>
-        <ActionBar :title="'Pictures'" />
         <StackLayout>
 
             <ListView v-if="loadedAPI" class="list-group" for="data in apiData.photos" @itemTap="onItemTap" style="height:1250px">
@@ -18,9 +16,7 @@
             </ListView>
 
             <Label v-else>Loading</Label>
-
         </StackLayout>
-    </Page>
 </template>
 
 <script>
