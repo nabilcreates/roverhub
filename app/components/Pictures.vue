@@ -10,8 +10,8 @@
                         <Image :src="data.img_src" />
 
                         <!-- DISPLAY DATE OF PHOTO TAKEN -->
-                        <Label textWrap='true'>Date Taken: {{data.earth_date}}</Label>
-                        <Label textWrap='true'>Camera: {{data.camera.full_name}} ({{data.camera.name}})</Label>
+                        <Label textWrap='true'>📅: {{data.earth_date}}</Label>
+                        <Label textWrap='true'>📷: {{data.camera.full_name}} ({{data.camera.name}})</Label>
                         
                     </StackLayout>
                 </v-template>
