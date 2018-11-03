@@ -1,0 +1,129 @@
+<template>
+    <Page>
+        <ActionBar :title="'Pictures'" />
+        <StackLayout>
+
+            <ListView v-if="loadedAPI" class="list-group" for="data in apiData.photos" @itemTap="onItemTap" style="height:1250px">
+                <v-template>
+                    <StackLayout flexDirection="row" class="list-group-item">
+                        <!-- DISPLAY THE IMAGE -->
+                        <Image :src="data.img_src" />
+
+                        <!-- DISPLAY DATE OF PHOTO TAKEN -->
+                        <Label textWrap='true'>Date Taken: {{data.earth_date}}</Label>
+                        <Label textWrap='true'>Camera: {{data.camera.full_name}} ({{data.camera.name}})</Label>
+                        
+                    </StackLayout>
+                </v-template>
+            </ListView>
+
+            <Label v-else>Loading</Label>
+
+        </StackLayout>
+    </Page>
+</template>
+
+<script>
+    var appconfig = require("../package.json")
+
+    export default {
+        data() {
+            return {
+
+                app: {
+                    name: "",
+                    version: "",
+                },
+
+                api_key: "0Ls3Ro5l2tWOuHLvK3N8roehpIZxpYxIuK0WN9AZ",
+                apiData: [],
+                apiDateData: "",
+
+                loadedAPI: false,
+                loadedDate: false,
+            }
+        },
+
+        methods: {
+
+            getLatestDate() {
+
+                this.loadedDate = false;
+
+                fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=100&page=1&api_key=" + this.api_key)
+                    .then(res => res.json())
+                    .then(json => {
+
+                        this.loadedDate = true;
+
+                        if (this.loadedDate) {
+                            this.apiDateData = json
+                            console.log(this.apiDateData.photos[0].rover.max_date)
+
+                            // RUN GETAPIDATA
+                            this.getApiData()
+                        }
+                    })
+
+            },
+
+            getApiData() {
+                this.loadedAPI = false;
+                fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=" + this.apiDateData
+                        .photos[0].rover.max_date +
+                        "&api_key=" + this.api_key)
+                    .then(res => res.json())
+                    .then(json => {
+
+                        this.apiData = json;
+                        this.loadedAPI = true;
+
+                        console.log(json)
+                    })
+
+            }
+
+        },
+
+        mounted() {
+            // this.app.name = appconfig.name;
+            // this.app.version = appconfig.version;
+
+            this.getLatestDate()
+
+        }
+
+    }
+</script>
+
+<style scoped>
+    /* ABC */
+    /* PCOLOR IS #d83131 */
+
+    ActionBar {
+        background-color: #d83131;
+        color: #ffffff;
+    }
+
+    StackLayout{
+        margin: 0 10;
+    }
+    
+    Label{
+        color: white;
+    }
+    
+    Page{
+        background-color: #161616;
+        color: white;
+    }
+
+    Button {
+        margin: 10 0;
+        color: white;
+        background-color: #d83131;
+        border-radius: 1000;
+        height: 38;
+    }
+    
+</style>
