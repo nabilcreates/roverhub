@@ -1,6 +1,6 @@
-# nasa-app
+# Roverhub
 
-> Nasa pics (latest)
+> An android app that gathers the latest picture taken by NASA's Curiosity Rover
 
 ## Usage
 
