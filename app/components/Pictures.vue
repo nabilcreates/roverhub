@@ -25,6 +25,7 @@
 
 <script>
     var appconfig = require("../package.json")
+    var utilsModule = require("tns-core-modules/utils/utils");
 
     export default {
         data() {
@@ -81,6 +82,12 @@
                         console.log(json)
                     })
 
+            },
+
+            onItemTap(args){
+                var index = args.index
+                console.log(index)
+                utilsModule.openUrl(this.apiData.photos[args.index].img_src)
             }
 
         },
