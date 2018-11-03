@@ -8,15 +8,11 @@
             </TabViewItem>
 
             <TabViewItem title="Pictures From Curiosity">
-
                 <pictures-vue />
-                
             </TabViewItem>
 
             <TabViewItem title="About Curiosity">
-
                 <about-curiosity-vue />
-                
             </TabViewItem>
 
 

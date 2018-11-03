@@ -15,7 +15,7 @@
                 </v-template>
             </ListView>
 
-            <Label v-else>Loading</Label>
+            <Label v-else>Loading Pictures... This may take around 10-60 seconds</Label>
         </StackLayout>
 </template>
 
