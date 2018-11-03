@@ -1,4 +1,4 @@
-# Curiosity
+# Roverhub
 
 > An android app that gathers the latest picture taken by NASA's Curiosity Rover
 
