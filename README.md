@@ -21,7 +21,7 @@ tns debug <platform> --bundle
 # Build, watch for changes and run the application
 tns run <platform> --bundle
 
-# Or use nativescript preview
+# Or use nativescript preview (HIGHLY RECOMMENDED)
 tns preview --bundle
 
 ```
