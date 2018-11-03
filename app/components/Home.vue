@@ -2,13 +2,11 @@
 
     <ScrollView>
         <StackLayout>
-            <Label textWrap="true" class="h1" style="color: white; font-weight: 700;">{{app.name}}</Label>
-            <Label textWrap="true" class="h3" style="color: white; font-weight: 700;">This app gathers the latest pictures taken by NASA's Curiosity Rover</Label>
+            <Label textWrap="true" class="h1" >{{app.name}}</Label>
+            <Label textWrap="true" class="h3" >This app gathers the latest pictures taken by NASA's Curiosity Rover</Label>
             <Label textWrap="true">The images may load slowly (this depends on your internet connection). I am not responsible for your data usage or anything that happens to your phone</Label>
 
-            <Label textWrap="true">Sol means the number of days since the Curiosity is on Mars</Label>
-
-            <Label textWrap="true" class="h2" style="color: white; font-weight: 700;">Swipe To Continue ➡️</Label>
+            <Label textWrap="true" class="h2">Swipe To Continue ➡️</Label>
 
         </StackLayout>
     </ScrollView>
@@ -49,16 +47,12 @@
     }
 
     StackLayout {
-        margin: 50;
-    }
-
-    Label {
-        color: white;
+        margin: 20;
     }
 
     Page {
-        background-color: #161616;
-        color: white;
+        background-color: white;
+        color: black;
     }
 
     Button {
@@ -68,4 +62,10 @@
         border-radius: 1000;
         height: 38;
     }
+
+    .h1, .h2, .h3{
+        font-weight: 700;
+    }
+    
+    
 </style>

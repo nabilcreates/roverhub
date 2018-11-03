@@ -1,18 +1,16 @@
 <template>
         <StackLayout>
 
+            <Label textWrap='true'>Loading of pictures may take up to 2 minutes!</Label>
             <Label textWrap='true'>Max Martian Sol: {{max_sol}}</Label>
-
             <TextField v-model="value" />
-            <Slider value="max_sol" v-model="value" minValue='0' :maxValue='max_sol' />
+            <!-- <Slider value="max_sol" v-model="value" minValue='0' :maxValue='max_sol' /> -->
             <Button @tap="getApiData(value)">Get Pictures</Button>
 
-            <StackLayout v-if="loadedAPI">
-
                 <!-- DISPLAY THIS IF APIDATA.PHOTOS.LENGTH = 0 OR IN OTHER WORDS, NO PICS ON THAT SOL -->
-                <Label textWrap='true' v-if="apiData.photos.length == 0">No Pics :(</Label>
+                <Label textWrap='true' v-if="loadedAPI && apiData.photos.length == 0">No Pics :(</Label>
 
-                <ListView class="list-group" for="data in apiData.photos" @itemTap="onItemTap" style="height:1250px">
+                <ListView v-if="loadedAPI" class="list-group" for="data in apiData.photos" @itemTap="onItemTap" style="height:1250px">
                     <v-template>
                         <StackLayout flexDirection="row" class="list-group-item">
                             <!-- DISPLAY THE IMAGE -->
@@ -25,9 +23,6 @@
                         </StackLayout>
                     </v-template>
                 </ListView>
-
-            </StackLayout>
-
 
 
         </StackLayout>
@@ -129,13 +124,9 @@
         margin: 0 10;
     }
 
-    Label {
-        color: white;
-    }
-
     Page {
-        background-color: #161616;
-        color: white;
+        background-color: white;
+        color: black;
     }
 
     Button {

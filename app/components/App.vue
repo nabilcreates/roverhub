@@ -75,23 +75,19 @@
     }
 
     StackLayout {
-        margin: 15;
-    }
-
-    Label {
-        color: white;
+        margin: 0 10;
     }
 
     Page {
-        background-color: #161616;
-        color: white;
+        background-color: white;
+        color: black;
     }
 
     Button {
-        margin-top: 10;
+        margin: 10 0;
         color: white;
         background-color: #d83131;
         border-radius: 1000;
-        /* height: 38; */
+        height: 38;
     }
 </style>
