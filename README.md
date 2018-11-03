@@ -5,6 +5,10 @@
 ## Usage
 
 ``` bash
+
+# Install nativescript@next (at the time of this build)
+npm install nativescript@next -g
+
 # Install dependencies
 npm install
 
