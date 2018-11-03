@@ -3,6 +3,6 @@
     "v8Flags": "--expose_gc"
   },
   "main": "main",
-  "name": "Roverhub",
+  "name": "Curiosityhub",
   "version": "0.0.1u"
 }
