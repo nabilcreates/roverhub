@@ -51,7 +51,7 @@
     }
 
     StackLayout{
-        margin: 0 10;
+        margin: 15;
     }
     
     Label{
@@ -64,10 +64,10 @@
     }
 
     Button {
-        margin: 10 0;
+        margin-top: 10;
         color: white;
         background-color: #d83131;
         border-radius: 1000;
-        height: 38;
+        /* height: 38; */
     }
 </style>
