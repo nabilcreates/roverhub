@@ -2,16 +2,13 @@
     <Page>
         <ActionBar :title="app.name + ' ' + app.version" />
 
-        <TabView tabBackgroundColor="#d83131" androidTabsPosition="top" selectedTabTextColor="#ffffff">
-            <!-- <TabViewItem title="Home">
-                <home-vue />
-            </TabViewItem> -->
+        <TabView android:tabBackgroundColor="#d83131" android:tabTextColor="#ffffff" android:selectedTabTextColor="#ffffff" androidSelectedTabHighlightColor="#ffffff">
 
-            <TabViewItem title="Pictures From Curiosity">
+            <TabViewItem title="Pictures">
                 <pictures-vue />
             </TabViewItem>
 
-            <TabViewItem title="About Curiosity">
+            <TabViewItem title="About The Curiosity">
                 <about-curiosity-vue />
             </TabViewItem>
 
