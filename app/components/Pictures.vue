@@ -82,6 +82,11 @@
 
         mounted() {
             this.getLatestSol();
+
+            console.log(Math.floor(Math.random() * 2219))
+            // SETS RANDOM VALUE UP TO 2219
+            this.value = Math.floor(Math.random() * 2219)
+
         }
 
     }
@@ -105,17 +110,21 @@
         color: white;
     }
 
-    .h1,.h2,.h3,.h4,.h5,.h6{
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
         color: white;
     }
 
-    Label{
-        color:white;
+    Label {
+        color: white;
     }
 
     Button {
         color: white;
         background-color: #ee6f1a;
     }
-
 </style>
