@@ -3,13 +3,11 @@
     <StackLayout>
 
         <StackLayout v-if='loadedDate'>
-            <Label class="h3" textWrap='true'>
-                Select a Martian Sol
-            </Label>
+            <Label class="h3" textWrap='true' style="text-align: center; font-weight: 700; margin: 10 0;">Select a Martian Sol</Label>
 
             <GridLayout columns="*,*" rows='*' height='30'>
-                <Label style='verticalAlignment: middle;' col='0' rows='0' textWrap='true'>Max Martian Sol: {{max_sol}}</Label>
-                <Label style='verticalAlignment: middle;' col='1' rows='0' textWrap='true'>Current Martian Sol: {{value}}</Label>
+                <Label style='text-align: center;' col='0' rows='0' textWrap='true'>Max Martian Sol: {{max_sol}}</Label>
+                <Label style='text-align: center;' col='1' rows='0' textWrap='true'>Current Martian Sol: {{value}}</Label>
             </GridLayout>
 
             <!-- <Slider value="max_sol" v-model="value" minValue='0' :maxValue='max_sol' /> -->
