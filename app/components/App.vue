@@ -93,6 +93,6 @@
         color: white;
         background-color: #d83131;
         border-radius: 1000;
-        height: 38;
+        height: 40;
     }
 </style>

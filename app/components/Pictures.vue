@@ -3,7 +3,9 @@
     <StackLayout>
 
         <StackLayout v-if='loadedDate'>
-            <Label class="h3" textWrap='true'>Please note that the picture may take up to 2 minutes to load!</Label>
+            <Label class="h3" textWrap='true'>
+                Select a Martian Sol
+            </Label>
 
             <GridLayout columns="*,*" rows='*' height='30'>
                 <Label style='verticalAlignment: middle;' col='0' rows='0' textWrap='true'>Max Martian Sol: {{max_sol}}</Label>
@@ -13,9 +15,9 @@
             <!-- <Slider value="max_sol" v-model="value" minValue='0' :maxValue='max_sol' /> -->
 
             <GridLayout columns="*,5*,*" rows="*" height="50">
-                <Button class="plusminus" @tap="value --" col="0" row='0'>- 1</Button>
+                <Button @tap="value --" col="0" row='0'>-</Button>
                 <TextField style="text-align: center;" v-model="value" col='1' row='0' />
-                <Button class="plusminus" @tap="value ++" col='2' row='0'>+ 1</Button>
+                <Button @tap="value ++" col='2' row='0'>+</Button>
             </GridLayout>
 
             <Button @tap="navigateToViewPictures">Get Pictures</Button>
@@ -112,17 +114,10 @@
     Label{
         color:white;
     }
+
     Button {
-        margin-top: 10;
         color: white;
         background-color: #d83131;
-        border-radius: 1000;
-        height: 38;
     }
 
-    plusminus{
-        font-size: 30;
-        verticalAlignment: center;
-        HorizontalAlignment: center;
-    }
 </style>
