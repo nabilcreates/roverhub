@@ -37,7 +37,7 @@
 
                 api_key: "0Ls3Ro5l2tWOuHLvK3N8roehpIZxpYxIuK0WN9AZ",
 
-                value: 2218,
+                value: 0,
                 max_sol: "",
 
                 apiDateData: [],
@@ -59,6 +59,7 @@
                             this.apiDateData = json
                             this.loadedDate = true;
                             // SOL = json.photos[0].rover.max_sol
+
                             // SET VALUE TO LATEST SOL
                             this.max_sol = json.photos[0].rover.max_sol
                         }
