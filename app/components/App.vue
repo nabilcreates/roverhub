@@ -2,7 +2,7 @@
     <Page>
         <ActionBar :title="app.name + ' ' + app.version" />
 
-        <TabView android:tabBackgroundColor="#d83131" android:tabTextColor="#ffffff" android:selectedTabTextColor="#ffffff" androidSelectedTabHighlightColor="#ffffff">
+        <TabView android:tabBackgroundColor="#ee6f1a" android:tabTextColor="#ffffff" android:selectedTabTextColor="#ffffff" androidSelectedTabHighlightColor="#ffffff">
 
             <TabViewItem title="Pictures">
                 <pictures-vue />
@@ -64,10 +64,10 @@
 
 <style scoped>
     /* ABC */
-    /* PCOLOR IS #d83131 */
+    /* PCOLOR IS #ee6f1a */
 
     ActionBar {
-        background-color: #d83131;
+        background-color: #ee6f1a;
         color: #ffffff;
     }
 
@@ -91,7 +91,7 @@
     Button {
         margin: 10 0;
         color: white;
-        background-color: #d83131;
+        background-color: #ee6f1a;
         border-radius: 1000;
         height: 40;
     }

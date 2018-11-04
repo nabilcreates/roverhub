@@ -89,10 +89,10 @@
 
 <style scoped>
     /* ABC */
-    /* PCOLOR IS #d83131 */
+    /* PCOLOR IS #ee6f1a */
 
     ActionBar {
-        background-color: #d83131;
+        background-color: #ee6f1a;
         color: #ffffff;
     }
 
@@ -115,7 +115,7 @@
 
     Button {
         color: white;
-        background-color: #d83131;
+        background-color: #ee6f1a;
     }
 
 </style>
