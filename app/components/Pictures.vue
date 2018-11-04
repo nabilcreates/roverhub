@@ -3,7 +3,7 @@
     <StackLayout>
 
         <StackLayout v-if='loadedDate'>
-            <Label class="h2" textWrap='true'>Loading of pictures may take up to 2 minutes!</Label>
+            <Label class="h3" textWrap='true'>Please note that the picture may take up to 2 minutes to load!</Label>
 
             <GridLayout columns="*,*" rows='*' height='30'>
                 <Label style='verticalAlignment: middle;' col='0' rows='0' textWrap='true'>Max Martian Sol: {{max_sol}}</Label>
@@ -13,13 +13,15 @@
             <!-- <Slider value="max_sol" v-model="value" minValue='0' :maxValue='max_sol' /> -->
 
             <GridLayout columns="*,5*,*" rows="*" height="50">
-                <Button style='border-radius: 0;' @tap="value --" col="0" row='0'>-</Button>
-                <TextField v-model="value" col='1' row='0' />
-                <Button style='border-radius: 0;' @tap="value ++" col='2' row='0'>+</Button>
+                <Button class="plusminus" @tap="value --" col="0" row='0'>- 1</Button>
+                <TextField style="text-align: center;" v-model="value" col='1' row='0' />
+                <Button class="plusminus" @tap="value ++" col='2' row='0'>+ 1</Button>
             </GridLayout>
 
             <Button @tap="navigateToViewPictures">Get Pictures</Button>
         </StackLayout>
+
+        <Label v-else>Loading..</Label>
 
     </StackLayout>
 
@@ -116,5 +118,11 @@
         background-color: #d83131;
         border-radius: 1000;
         height: 38;
+    }
+
+    plusminus{
+        font-size: 30;
+        verticalAlignment: center;
+        HorizontalAlignment: center;
     }
 </style>
