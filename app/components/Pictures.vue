@@ -12,7 +12,7 @@
 
             <!-- <Slider value="max_sol" v-model="value" minValue='0' :maxValue='max_sol' /> -->
 
-            <GridLayout columns="*,5*,*" rows="*" height="50">
+            <GridLayout columns="*,3*,*" rows="*" height="50">
                 <Button @tap="value --" col="0" row='0'>-</Button>
                 <TextField style="text-align: center;" v-model="value" col='1' row='0' />
                 <Button @tap="value ++" col='2' row='0'>+</Button>
