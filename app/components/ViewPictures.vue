@@ -16,11 +16,13 @@
                             <!-- DISPLAY THE IMAGE -->
                             <Image :src="data.img_src" />
                             <!-- <Label textWrap='true'>📅: {{data.earth_date}}</Label> -->
-                            <Label textWrap='true'>📷: {{data.camera.full_name}} ({{data.camera.name}})</Label>
+                            <Label textWrap='true'>Taken using the: {{data.camera.full_name}}</Label>
 
                         </StackLayout>
                     </v-template>
                 </ListView>
+
+                <Label v-else>Loading Pictures... (May take up to 2 minutes)</Label>
 
 
         </StackLayout>
