@@ -3,15 +3,21 @@
     <StackLayout>
 
         <StackLayout v-if='loadedDate'>
-            <Label textWrap='true'>Loading of pictures may take up to 2 minutes!</Label>
-            <Label textWrap='true'>Max Martian Sol: {{max_sol}}</Label>
-            <Label textWrap='true'>Current Martian Sol: {{value}}</Label>
-            <TextField v-model="value" />
+            <Label class="h2" textWrap='true'>Loading of pictures may take up to 2 minutes!</Label>
+
+            <GridLayout columns="*,*" rows='*' height='30'>
+                <Label style='verticalAlignment: middle;' col='0' rows='0' textWrap='true'>Max Martian Sol: {{max_sol}}</Label>
+                <Label style='verticalAlignment: middle;' col='1' rows='0' textWrap='true'>Current Martian Sol: {{value}}</Label>
+            </GridLayout>
+
             <!-- <Slider value="max_sol" v-model="value" minValue='0' :maxValue='max_sol' /> -->
 
-            <Button @tap="value -= 1">-</Button>
-            <Button @tap="value += 1">+</Button>
-            
+            <GridLayout columns="*,5*,*" rows="*" height="50">
+                <Button style='border-radius: 0;' @tap="value --" col="0" row='0'>-</Button>
+                <TextField v-model="value" col='1' row='0' />
+                <Button style='border-radius: 0;' @tap="value ++" col='2' row='0'>+</Button>
+            </GridLayout>
+
             <Button @tap="navigateToViewPictures">Get Pictures</Button>
         </StackLayout>
 
@@ -29,13 +35,13 @@
         data() {
             return {
 
-                api_key:  "0Ls3Ro5l2tWOuHLvK3N8roehpIZxpYxIuK0WN9AZ",
-                
+                api_key: "0Ls3Ro5l2tWOuHLvK3N8roehpIZxpYxIuK0WN9AZ",
+
                 value: 2218,
                 max_sol: "",
 
                 apiDateData: [],
-                
+
                 loadedDate: false,
 
             }
@@ -92,10 +98,17 @@
     }
 
     Page {
-        background-color: white;
-        color: black;
+        background-color: #161616;
+        color: white;
     }
 
+    .h1,.h2,.h3,.h4,.h5,.h6{
+        color: white;
+    }
+
+    Label{
+        color:white;
+    }
     Button {
         margin-top: 10;
         color: white;

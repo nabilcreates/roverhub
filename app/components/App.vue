@@ -3,9 +3,9 @@
         <ActionBar :title="app.name + ' ' + app.version" />
 
         <TabView tabBackgroundColor="#d83131" androidTabsPosition="top" selectedTabTextColor="#ffffff">
-            <TabViewItem title="Home">
+            <!-- <TabViewItem title="Home">
                 <home-vue />
-            </TabViewItem>
+            </TabViewItem> -->
 
             <TabViewItem title="Pictures From Curiosity">
                 <pictures-vue />
@@ -79,8 +79,16 @@
     }
 
     Page {
-        background-color: white;
-        color: black;
+        background-color: #161616;
+        color: white;
+    }
+
+    .h1,.h2,.h3,.h4,.h5,.h6{
+        color: white;
+    }
+
+    Label{
+        color:white;
     }
 
     Button {

@@ -2,21 +2,20 @@
 
     <Page>
 
-        <ActionBar :title="'Pictures'" />
+        <ActionBar :title="'Pictures taken on ' + date + ' ('+solnumber+')'" />
 
         <StackLayout>
 
                 <!-- DISPLAY THIS IF APIDATA.PHOTOS.LENGTH = 0 OR IN OTHER WORDS, NO PICS ON THAT SOL -->
                 <Label textWrap='true' v-if="loadedAPI && apiData.photos.length == 0">No Pics :(</Label>
 
-                <ListView v-if="loadedAPI" class="list-group" for="data in apiData.photos" @itemTap="onItemTap" style="height:1250px">
+                <ListView v-if="loadedAPI" class="list-group" for="data in apiData.photos" @itemTap="onItemTap" style="height:1250px;" seperatorColor='gray'>
                     <v-template>
-                        <StackLayout flexDirection="row" class="list-group-item">
+
+                        <StackLayout class="list-group-item">
                             <!-- DISPLAY THE IMAGE -->
                             <Image :src="data.img_src" />
-
-                            <!-- DISPLAY DATE OF PHOTO TAKEN -->
-                            <Label textWrap='true'>📅: {{data.earth_date}}</Label>
+                            <!-- <Label textWrap='true'>📅: {{data.earth_date}}</Label> -->
                             <Label textWrap='true'>📷: {{data.camera.full_name}} ({{data.camera.name}})</Label>
 
                         </StackLayout>
@@ -50,6 +49,8 @@
                 apiData: [],
 
                 loadedAPI: false,
+
+                date: "",
             }
         },
 
@@ -68,6 +69,8 @@
                         this.apiData = json;
                         this.loadedAPI = true;
                         console.log("done")
+
+                        this.date = json.photos[0].earth_date
                     })
 
             },
@@ -96,13 +99,18 @@
         color: #ffffff;
     }
 
-    StackLayout {
-        margin: 0 10;
+    StackLayout{
+        background: #161616;
+        color: white;
+    }
+
+    Label{
+        color: white;
     }
 
     Page {
-        background-color: white;
-        color: black;
+        background-color: #161616;
+        color: #161616;
     }
 
     Button {
