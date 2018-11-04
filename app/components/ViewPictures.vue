@@ -9,14 +9,14 @@
                 <!-- DISPLAY THIS IF APIDATA.PHOTOS.LENGTH = 0 OR IN OTHER WORDS, NO PICS ON THAT SOL -->
                 <Label textWrap='true' v-if="loadedAPI && apiData.photos.length == 0">No Pics :(</Label>
 
-                <ListView v-if="loadedAPI" class="list-group" for="data in apiData.photos" @itemTap="onItemTap" style="height:1250px;" seperatorColor='gray'>
+                <ListView v-if="loadedAPI" class="list-group" for="data in apiData.photos" @itemTap="onItemTap" style="height:1250px;" separatorColor='transparent'>
                     <v-template>
 
                         <StackLayout class="list-group-item">
                             <!-- DISPLAY THE IMAGE -->
                             <Image :src="data.img_src" />
                             <!-- <Label textWrap='true'>📅: {{data.earth_date}}</Label> -->
-                            <Label textWrap='true'>Taken using the: {{data.camera.full_name}}</Label>
+                            <Label textWrap='true' style="margin: 10 0;">{{data.camera.full_name}}</Label>
 
                         </StackLayout>
                     </v-template>
